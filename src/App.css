@@ -2,10 +2,13 @@
   --primary-color: black;
   --cta-color: antiquewhite;
 }
+body {
+  background-color: var(--cta-color);
+}
 .App {
   max-width: 900px;
   margin: auto;
-  background-color: var(--cta-color);
+  /* background-color: var(--cta-color); */
   min-height: 100vh;
 }
 .navbar {
@@ -24,7 +27,13 @@
 }
 .link {
   color: var(--primary-color);
+
   text-decoration: none;
+}
+.link-active {
+  color: var(--primary-color);
+
+  text-decoration: underline;
 }
 .home {
   display: flex;
@@ -84,4 +93,5 @@
 .submit-btn:active {
   transition-delay: 10s;
   box-shadow: 0px;
+  box-shadow: 0 0 0px 0px;
 }
