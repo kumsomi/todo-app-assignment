@@ -1,27 +1,20 @@
-import React, { FormEvent, useState } from "react";
+import React from "react";
 
-export const Todos = () => {
-  const [input, setInput] = useState("");
+import TodoList from "../components/todoList";
+import TodoForm from "../components/todoForm";
+import { useTodo } from "../context/todo";
 
-  const addTodos = (e: FormEvent) => {
-    e.preventDefault();
-    console.log(input);
-  };
+export const Todos: React.FC = () => {
+  const { todoState } = useTodo();
   return (
     <div className="todo-container">
       <h3>Create your daily tasks</h3>
-      <form onSubmit={addTodos} className="form-todo">
-        <input
-          type="text"
-          placeholder="Add todos..."
-          className="input-todo"
-          onChange={(e) => setInput(e.target.value)}
-        />
-        {/* <input className="sumbit-btn" type="submit" value="+" /> */}
-        <button type="submit" className="submit-btn">
-          +
-        </button>
-      </form>
+      <TodoForm />
+      <div className="todolist-container">
+        {todoState.map((todo) => (
+          <TodoList key={todo.id} {...todo} />
+        ))}
+      </div>
     </div>
   );
 };

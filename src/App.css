@@ -1,9 +1,12 @@
 :root {
-  --primary-color: black;
-  --cta-color: antiquewhite;
+  --screen-color: #eee2dc;
+  --primary-color: #123c69;
+  --cta-color: #ac3b61;
+  --secondary-color: #edc7b7;
 }
 body {
-  background-color: var(--cta-color);
+  background-color: var(--screen-color);
+  color: var(--primary-color);
 }
 .App {
   max-width: 900px;
@@ -31,8 +34,8 @@ body {
   text-decoration: none;
 }
 .link-active {
-  color: var(--primary-color);
-
+  color: var(--cta-color);
+  font-weight: bold;
   text-decoration: underline;
 }
 .home {
@@ -52,6 +55,13 @@ body {
   border: 2px solid;
   width: fit-content;
 }
+.home-btn:hover {
+  background-color: var(--cta-color);
+}
+.home-btn:active {
+  border: 0px;
+  transition: 0.2s;
+}
 .todo-container {
   display: flex;
   align-items: center;
@@ -64,34 +74,80 @@ body {
   align-items: center;
   width: 500px;
   max-width: 90%;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .input-todo {
+  /* background-color: var(--secondary-color); */
   padding: 10px 20px;
   font-size: 20px;
-  width: 100%;
   position: relative;
   border: 1px solid;
   border-radius: 50px;
   box-shadow: 0 0 5px 0.1px;
+  border: 0px;
+  flex-grow: 1;
 }
 
-.input-todo:focus {
-  box-shadow: 0px 0px 10px 1000px rgb(0, 0, 0, 0.6);
-  /* vertical horizontal blur spread colour */
-}
 .submit-btn {
-  position: absolute;
-  right: 15px;
   border-radius: 50px;
-  font-size: 20px;
   border: 0px;
-  padding: 5px 10px;
-  background-color: antiquewhite;
+  font-size: 15px;
+  padding: 10px 15px;
   transition: 0.2s all;
   box-shadow: 0 0 5px 0.1px;
+  cursor: pointer;
+  flex-grow: 2;
+}
+.submit-btn:hover {
+  background-color: var(--cta-color);
+  /* background-color: rgb(255, 200, 0); */
 }
 .submit-btn:active {
-  transition-delay: 10s;
-  box-shadow: 0px;
-  box-shadow: 0 0 0px 0px;
+  font-size: 10px;
+}
+
+.select {
+  padding: 10px;
+  border-radius: 50px;
+  font-size: 15px;
+  box-shadow: 0 0 5px 0.1px;
+  flex-grow: 1;
+}
+
+.todolist-container {
+  width: 500px;
+  max-width: 90%;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin: 10px auto;
+  justify-items: center;
+}
+.todolist {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+.todo-icon:hover {
+  color: var(--cta-color);
+  cursor: pointer;
+}
+.completed-todo {
+  text-decoration: line-through;
+}
+.todolist-check {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--cta-color);
+}
+.todolist-subtag {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
 }
