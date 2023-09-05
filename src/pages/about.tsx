@@ -8,8 +8,8 @@ export const About = () => {
         At TaskTrip, we are passionate about helping you lead a more organized
         and productive life. We understand the daily challenges of managing
         tasks, staying on top of deadlines, and achieving your goals. That's why
-        we created this app – to simplify your life and empower you to
-        accomplish more.
+        we created this app to simplify your life and empower you to accomplish
+        more.
       </p>
 
       <h3>Our Mission</h3>

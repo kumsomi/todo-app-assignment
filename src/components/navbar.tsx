@@ -31,9 +31,7 @@ export const Navbar: React.FC = () => {
           todos
         </NavLink>
         <NavLink
-          className={({ isActive, isPending }) =>
-            isActive ? "link-active" : "link"
-          }
+          className={({ isActive }) => (isActive ? "link-active" : "link")}
           to="/about"
         >
           about
